@@ -1,27 +1,40 @@
 {
-  "name": "retro-wcs",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "13.5.4"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10",
-    "postcss": "^8",
-    "tailwindcss": "^3",
-    "eslint": "^8",
-    "eslint-config-next": "13.5.4"
-  }
+	"name": "retro-wcs",
+	"version": "0.1.0",
+	"private": true,
+	"homepage": "https://github.com/GorskiAnthony/retro-wcs#readme",
+	"description": "retro-wcs permet de faire notre retrospective de la semaine en ligne",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/GorskiAnthony/retro-wcs.git"
+	},
+	"bug": {
+		"url": "https://github.com/GorskiAnthony/retro-wcs/issues"
+	},
+	"engines": {
+		"node": ">=18.18.0"
+	},
+	"author": "Anthony Gorski",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"react": "^18",
+		"react-dom": "^18",
+		"next": "13.5.4"
+	},
+	"devDependencies": {
+		"typescript": "^5",
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"autoprefixer": "^10",
+		"postcss": "^8",
+		"tailwindcss": "^3",
+		"eslint": "^8",
+		"eslint-config-next": "13.5.4"
+	}
 }
