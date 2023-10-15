@@ -48,7 +48,7 @@ Give a ⭐️ if this project helped you!
 
 ### 🗃️ Version
 
--   **v0.0.1** - 2023-10-15
+-   **v0.1.0** - 2023-10-15
     -   Initialisation du projet
     -   Création du repo
     -   Création du README
