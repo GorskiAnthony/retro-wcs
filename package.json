@@ -8,7 +8,7 @@
 		"type": "git",
 		"url": "git+https://github.com/GorskiAnthony/retro-wcs.git"
 	},
-	"bug": {
+	"bugs": {
 		"url": "https://github.com/GorskiAnthony/retro-wcs/issues"
 	},
 	"engines": {
