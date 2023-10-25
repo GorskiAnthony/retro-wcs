@@ -61,6 +61,9 @@ Donnez un ⭐️ si ce projet vous a aidé !
     -   Initialisation du projet
     -   Création du repo
     -   Création du README
+-   **v0.2.0** - 2023-10-25
+    -   Ajout des colonnes
+    -   Ajout des cartes
 
 ---
 
