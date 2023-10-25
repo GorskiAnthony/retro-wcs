@@ -11,7 +11,7 @@ function Columns({ title, color }: ColumnsProps) {
 				{title}
 			</h2>
 			<button style={{ color: color }} className={`${style.button}`}>
-				Add button
+				+ Add New Card
 			</button>
 		</div>
 	);
