@@ -6,9 +6,13 @@ interface ColumnsProps {
 import style from "./columns.module.css";
 function Columns({ title, color }: ColumnsProps) {
 	return (
-		<div style={{ backgroundColor: color }} className={style.column}>
-			<label htmlFor={title}>{title}</label>
-			<div></div>
+		<div className={style.column}>
+			<h2 style={{ backgroundColor: color }} className={style.h2}>
+				{title}
+			</h2>
+			<button style={{ color: color }} className={`${style.button}`}>
+				Add button
+			</button>
 		</div>
 	);
 }

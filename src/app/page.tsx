@@ -7,9 +7,9 @@ export default function Home() {
 		<>
 			<Links />
 			<main className={style.main}>
-				<Columns title="Ça c'est cool !" color="#33b195" />
-				<Columns title="À améliorer" color="#de5ab8" />
-				<Columns title="🤪 Remarque & Fun" color="#e3a908" />
+				<Columns title="Ça c'est cool ! 🚀🤘" color="#33b195" />
+				<Columns title="À améliorer 📈" color="#de5ab8" />
+				<Columns title="Remarque & Fun 🤪" color="#e3a908" />
 			</main>
 		</>
 	);

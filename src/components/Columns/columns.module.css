@@ -1,3 +1,16 @@
+.h2 {
+	@apply p-5 text-white rounded-t-md;
+}
+
 .column {
-	@apply p-5 text-white rounded-md shadow-md;
+	@apply rounded-t-md flex flex-col bg-gray-200;
+}
+
+.column .button {
+	@apply w-3/4;
+}
+
+.button {
+	@apply rounded-md m-2 p-2 border-dashed border-2 border-gray-500 self-center hover:bg-gray-300 hover:text-white hover:border-white;
+	background-color: var(--background-end-rgb);
 }
