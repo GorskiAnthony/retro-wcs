@@ -1,9 +1,9 @@
-.h2 {
-	@apply p-5 text-white rounded-t-md;
-}
-
 .column {
 	@apply rounded-t-md flex flex-col bg-gray-200;
+}
+
+.h2 {
+	@apply p-5 text-white rounded-t-md;
 }
 
 .column .button {

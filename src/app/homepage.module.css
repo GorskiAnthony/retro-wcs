@@ -1,3 +1,7 @@
 .main {
-	@apply grid grid-cols-3 gap-4 p-4;
+	@apply flex flex-col items-center justify-center;
+}
+
+.columns {
+	@apply grid grid-cols-3 gap-4 p-4 w-3/4;
 }
