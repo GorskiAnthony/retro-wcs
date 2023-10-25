@@ -1,0 +1,20 @@
+.card {
+	@apply bg-white shadow-md rounded-lg overflow-hidden w-10/12 self-center
+	mb-3;
+}
+
+.card textarea {
+	@apply w-full h-32 p-2;
+}
+
+.buttons {
+	@apply flex justify-between p-2;
+}
+
+.buttonSave {
+	@apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+}
+
+.buttonError {
+	@apply bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded;
+}
