@@ -30,19 +30,28 @@ npm install
 ## Usage
 
 ```sh
-npm run dev
+npm run start
 ```
 
-## Auteur
+## Auteurs
 
 👤 **Anthony Gorski**
 
 -   𝕏 - (Twitter): [@Gorski_Anthony](https://twitter.com/Gorski_Anthony)
 -   GitHub: [@GorskiAnthony](https://github.com/GorskiAnthony)
 
+👤 **Samuel Faber**
+
+-   GitHub: [@SamuelFaberDev](https://github.com/samuelfaberdev)
+
+## 🤝 Contributing
+
+Les contributions, les problèmes et les demandes de fonctionnalités sont les bienvenus !<br />
+N'hésitez pas à consulter la page [issues](https://github.com/GorskiAnthony/retro-wcs/issues).
+
 ## Affichez votre soutien
 
-Give a ⭐️ if this project helped you!
+Donnez un ⭐️ si ce projet vous a aidé !
 
 ---
 
@@ -52,6 +61,9 @@ Give a ⭐️ if this project helped you!
     -   Initialisation du projet
     -   Création du repo
     -   Création du README
+-   **v0.2.0** - 2023-10-25
+    -   Ajout des colonnes
+    -   Ajout des cartes
 
 ---
 
