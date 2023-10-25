@@ -12,13 +12,13 @@ function Card({ onSubmit, setIsNew, card }: CardProps) {
 			<textarea name="card" id="card"></textarea>
 			<div className={style.buttons}>
 				<button className={style.buttonSave} type="submit">
-					Save
+					Envoyer
 				</button>
 				<button
 					className={style.buttonError}
 					onClick={() => setIsNew(false)}
 				>
-					Close
+					En faite non..
 				</button>
 			</div>
 		</form>
