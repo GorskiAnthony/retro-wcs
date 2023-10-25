@@ -16,6 +16,7 @@ function Columns({ title, color }: ColumnsProps) {
 	function onSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
 		setIsNew(false);
+		if (!e.currentTarget.card.value) return;
 		setCards([...cards, e.currentTarget.card.value]);
 	}
 
@@ -24,26 +25,30 @@ function Columns({ title, color }: ColumnsProps) {
 	}
 
 	return (
-		<div className={style.column}>
-			<h2 style={{ backgroundColor: color }} className={style.h2}>
-				{title}
-			</h2>
+		<div>
+			<div className={style.column}>
+				<h2 style={{ backgroundColor: color }} className={style.h2}>
+					{title}
+				</h2>
 
-			<button
-				style={{ color: color }}
-				className={`${style.button}`}
-				onClick={addCard}
-			>
-				+ Add New Card
-			</button>
+				<button
+					style={{ color: color }}
+					className={`${style.button}`}
+					onClick={addCard}
+				>
+					+ Add New Card
+				</button>
+			</div>
 			{isNew && (
 				<Card onSubmit={onSubmit} setIsNew={setIsNew} card={cards} />
 			)}
-			{cards.map((card, index) => (
-				<div key={index} className={style.card}>
-					{card}
-				</div>
-			))}
+			<ul className={style.ul}>
+				{cards.map((card, index) => (
+					<li key={index} className={style.card}>
+						{card}
+					</li>
+				))}
+			</ul>
 		</div>
 	);
 }

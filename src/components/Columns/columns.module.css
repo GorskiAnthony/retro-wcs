@@ -14,3 +14,16 @@
 	@apply rounded-md m-2 p-2 border-dashed border-2 border-gray-500 self-center hover:bg-gray-300 hover:text-white hover:border-white;
 	background-color: var(--background-end-rgb);
 }
+
+.card {
+	@apply flex flex-col justify-between rounded-md m-2 p-2 border-2;
+	background-color: var(--background-end-rgb);
+}
+
+.ul {
+	@apply flex flex-col rounded-b-md bg-gray-200;
+}
+
+.ul li {
+	@apply flex justify-between p-2;
+}
