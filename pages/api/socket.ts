@@ -1,6 +1,6 @@
 import { Server } from "socket.io";
 
-export default function SocketHandler(req: any, res: any) {
+export default function handler(req: any, res: any) {
 	if (res.socket.server.io) {
 		console.log("already have io instance");
 	} else {
