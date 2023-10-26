@@ -21,11 +21,12 @@ function Columns({ name, title, color, state, socket }: ColumnsProps) {
 		const value = e.currentTarget.card.value;
 		if (!value || !value.trim()) return;
 
-		setIsNew(false);
 		socket.emit("addMessage", {
 			message: value,
 			column: name,
 		});
+		e.currentTarget.reset();
+		setIsNew(false);
 	}
 
 	function addCard() {
@@ -47,9 +48,7 @@ function Columns({ name, title, color, state, socket }: ColumnsProps) {
 					+ Add New Card
 				</button>
 			</div>
-			{isNew && (
-				<Card onSubmit={onSubmit} setIsNew={setIsNew} card={state} />
-			)}
+			{isNew && <Card onSubmit={onSubmit} setIsNew={setIsNew} />}
 			<ul className={style.ul}>
 				{state.map((card, index) => (
 					<li key={index} className={style.card}>

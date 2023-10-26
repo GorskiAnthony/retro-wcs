@@ -1,22 +1,30 @@
 import { Server } from "socket.io";
 
 export default function SocketHandler(req: any, res: any) {
-	const io = new Server(res.socket.server);
+	if (res.socket.server.io) {
+		console.log("already have io instance");
+		return;
+	} else {
+		const io = new Server(res.socket.server);
+		res.socket.server.io = io;
 
-	io.on("connection", (socket) => {
-		console.log("Socket.io server started: ", socket.id);
-		socket.on("addMessage", (obj: Object) => {
-			/**
-			 * output:
-			 *
-			 * obj = {
-			 * 	"message": "Hello World",
-			 *  "column": "good",
-			 * };
-			 */
-			io.emit("messageAdded", obj);
+		io.on("connection", (socket) => {
+			console.log("Socket.io server started: ", socket.id);
+			socket.on("addMessage", (obj: Object) => {
+				console.log("addMessage: ", obj);
+
+				/**
+				 * output:
+				 *
+				 * obj = {
+				 * 	"message": "Hello World",
+				 *  "column": "good",
+				 * };
+				 */
+				io.emit("messageAdded", obj);
+			});
 		});
-	});
+	}
 
 	res.end();
 }

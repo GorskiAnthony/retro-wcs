@@ -1,12 +1,11 @@
 interface CardProps {
 	onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 	setIsNew: React.Dispatch<React.SetStateAction<boolean>>;
-	card: string[];
 }
 
 import style from "./cards.module.css";
 
-function Card({ onSubmit, setIsNew, card }: CardProps) {
+function Card({ onSubmit, setIsNew }: CardProps) {
 	return (
 		<form className={style.card} onSubmit={onSubmit}>
 			<textarea name="card" id="card"></textarea>

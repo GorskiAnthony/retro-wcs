@@ -8,7 +8,6 @@ import Columns from "../components/Columns/columns";
 import style from "./homepage.module.css";
 
 let socket: any;
-
 export default function Home() {
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
 	const [allGood, setAllGood] = useState<string[]>([]);
@@ -27,9 +26,11 @@ export default function Home() {
 		await fetch("/api/socket");
 		socket = io();
 		// setIsLoaded permet d'enlever le loader
-		setIsLoaded(true);
-		socket.on("messageAdded", (obj: any) => {
-			updateState(obj.column, obj.message);
+		if (socket) socket.on("connect", () => setIsLoaded(true));
+		socket?.on("messageAdded", (data: any) => {
+			console.log(data);
+
+			updateState(data.column, data.message);
 		});
 	}
 
