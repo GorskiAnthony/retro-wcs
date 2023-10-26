@@ -6,7 +6,7 @@ export default function handler(req: any, res: any) {
 	} else {
 		const io = new Server(res.socket.server, {
 			addTrailingSlash: false,
-			allowEIO3: true,
+			path: "/api/socket_io",
 			cors: {
 				origin: "*",
 				methods: ["GET", "POST"],
