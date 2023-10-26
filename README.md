@@ -61,6 +61,14 @@ Donnez un ⭐️ si ce projet vous a aidé !
     -   Initialisation du projet
     -   Création du repo
     -   Création du README
+-   **v0.2.0** - 2023-10-25
+    -   Ajout des colonnes
+    -   Ajout des cartes
+-   **v0.7.0** - 2023-10-25
+    -   Ajout du websocket
+-   **v0.9.0** - 2023-10-26
+    -   fix websocket bug
+    -   Changement du server car Vercel ne supporte pas les websocket
 
 ---
 
