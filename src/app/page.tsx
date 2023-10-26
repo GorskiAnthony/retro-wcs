@@ -1,40 +1,53 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { io } from "socket.io-client";
+import { io, Socket } from "socket.io-client";
 
-import Links from "../components/Links/page";
-import Columns from "../components/Columns/columns";
+import Links from "@/components/Links/page";
+import Loader from "@/components/Loader/loader";
+import Columns from "@/components/Columns/columns";
 import style from "./homepage.module.css";
 
-let socket: any;
-
 export default function Home() {
+	const [socket, setSocket] = useState<Socket | null>(null);
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
 	const [allGood, setAllGood] = useState<string[]>([]);
 	const [badNews, setBadNews] = useState<string[]>([]);
 	const [fun, setFun] = useState<string[]>([]);
 
 	useEffect(() => {
-		if (!socket) socketInit();
+		if (!socket) {
+			socketInit();
+		}
 
 		return () => {
-			socket.disconnect();
+			if (socket) {
+				socket.disconnect();
+			}
 		};
-	}, []);
+	}, [socket]);
 
 	async function socketInit() {
+		// Fetch for initializing the socket connection
 		await fetch("/api/socket");
-		socket = io();
-		// setIsLoaded permet d'enlever le loader
-		setIsLoaded(true);
-		socket.on("messageAdded", (obj: any) => {
-			updateState(obj.column, obj.message);
+
+		// Create a new Socket.io instance
+		const newSocket = io();
+
+		newSocket.on("connect", () => {
+			console.log("Connected to Socket.io");
+			setIsLoaded(true); // Set the 'isLoaded' state to true when connected
 		});
+
+		// Set up event listener for 'messageAdded'
+		newSocket.on("messageAdded", (data: any) => {
+			updateState(data.column, data.message);
+		});
+
+		setSocket(newSocket);
 	}
 
 	/**
-	 *
 	 * @param name
 	 * @param value
 	 * @description updateState permet de mettre à jour le state en fonction de la colonne
@@ -49,6 +62,8 @@ export default function Home() {
 				break;
 			case "fun":
 				setFun((prev) => [...prev, value]);
+				break;
+			default:
 				break;
 		}
 	}
@@ -83,6 +98,6 @@ export default function Home() {
 			</main>
 		</>
 	) : (
-		<div> je suis une loader</div>
+		<Loader />
 	);
 }
