@@ -66,6 +66,9 @@ Donnez un ⭐️ si ce projet vous a aidé !
     -   Ajout des cartes
 -   **v0.7.0** - 2023-10-25
     -   Ajout du websocket
+-   **v0.9.0** - 2023-10-26
+    -   fix websocket bug
+    -   Changement du server car Vercel ne supporte pas les websocket
 
 ---
 
