@@ -1,6 +1,6 @@
 <h1 align="center">Bienvenue sur retro-wcs 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/node-%3E%3D18.18.0-blue.svg" />
   <a href="https://github.com/GorskiAnthony/retro-wcs#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
@@ -69,6 +69,9 @@ Donnez un ⭐️ si ce projet vous a aidé !
 -   **v0.9.0** - 2023-10-26
     -   fix websocket bug
     -   Changement du server car Vercel ne supporte pas les websocket
+-   **v1.0.0** - 2023-10-26
+    -   Mise en production
+    -   https://retro-wcs.onrender.com/
 
 ---
 
