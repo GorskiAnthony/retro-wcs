@@ -23,9 +23,10 @@ export default function Home() {
 	}, []);
 
 	async function socketInit() {
-		await fetch("/api/socket");
+		await fetch("/api/messages");
 
-		const data = await fetch("/api/hello");
+		const res = await fetch("/api/hello");
+		const data = await res.json();
 		console.log(data);
 
 		socket = io();
