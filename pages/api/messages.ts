@@ -1,11 +1,11 @@
 import { Server } from "socket.io";
 
 export default function handler(req: any, res: any) {
-	return res.status(200).json({ result: "It's work" });
 	if (res.socket.server.io) {
 		console.log("already have io instance");
 	} else {
 		const io = new Server(res.socket.server);
+		return res.json({ message: io });
 		res.socket.server.io = io;
 
 		io.on("connection", (socket) => {
