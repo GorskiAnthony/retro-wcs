@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { io } from "socket.io-client";
+import io from "socket.io-client";
 
 import Links from "../components/Links/page";
 import Columns from "../components/Columns/columns";
