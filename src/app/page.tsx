@@ -23,9 +23,9 @@ export default function Home() {
 	}, []);
 
 	async function socketInit() {
-		await fetch("/api/socket/socket");
-
+		await fetch("/api/socket");
 		socket = io();
+
 		// setIsLoaded permet d'enlever le loader
 		if (socket) setIsLoaded(true);
 

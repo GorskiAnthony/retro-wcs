@@ -4,7 +4,12 @@ export default function handler(req: any, res: any) {
 	if (res.socket.server.io) {
 		console.log("already have io instance");
 	} else {
-		const io = new Server(res.socket.server);
+		const io = new Server(res.socket.server, {
+			cors: {
+				origin: "*",
+				methods: ["GET", "POST"],
+			},
+		});
 		res.socket.server.io = io;
 
 		io.on("connection", (socket) => {
