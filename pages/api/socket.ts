@@ -5,6 +5,8 @@ export default function handler(req: any, res: any) {
 		console.log("already have io instance");
 	} else {
 		const io = new Server(res.socket.server, {
+			addTrailingSlash: false,
+			allowEIO3: true,
 			cors: {
 				origin: "*",
 				methods: ["GET", "POST"],
