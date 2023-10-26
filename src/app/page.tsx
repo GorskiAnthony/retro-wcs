@@ -23,10 +23,7 @@ export default function Home() {
 	}, []);
 
 	async function socketInit() {
-		const res = await fetch("/api/messages");
-		const data = await res.json();
-
-		console.log(data);
+		await fetch("/api/socket/socket");
 
 		socket = io();
 		// setIsLoaded permet d'enlever le loader

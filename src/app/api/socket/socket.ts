@@ -5,7 +5,6 @@ export default function handler(req: any, res: any) {
 		console.log("already have io instance");
 	} else {
 		const io = new Server(res.socket.server);
-		return res.json({ message: io });
 		res.socket.server.io = io;
 
 		io.on("connection", (socket) => {
