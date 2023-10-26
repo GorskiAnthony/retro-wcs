@@ -1,6 +1,6 @@
 {
 	"name": "retro-wcs",
-	"version": "0.9.0",
+	"version": "1.0.0",
 	"private": true,
 	"homepage": "https://github.com/GorskiAnthony/retro-wcs#readme",
 	"description": "retro-wcs permet de faire notre retrospective de la semaine en ligne",
