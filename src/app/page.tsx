@@ -26,10 +26,9 @@ export default function Home() {
 		await fetch("/api/socket");
 		socket = io();
 		// setIsLoaded permet d'enlever le loader
-		if (socket) socket.on("connect", () => setIsLoaded(true));
-		socket?.on("messageAdded", (data: any) => {
-			console.log(data);
+		if (socket) setIsLoaded(true);
 
+		socket?.on("messageAdded", (data: any) => {
 			updateState(data.column, data.message);
 		});
 	}
