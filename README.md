@@ -64,6 +64,8 @@ Donnez un ⭐️ si ce projet vous a aidé !
 -   **v0.2.0** - 2023-10-25
     -   Ajout des colonnes
     -   Ajout des cartes
+-   **v0.7.0** - 2023-10-25
+    -   Ajout du websocket
 
 ---
 

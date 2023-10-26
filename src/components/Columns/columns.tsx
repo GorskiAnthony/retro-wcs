@@ -1,23 +1,31 @@
 "use client";
 
 interface ColumnsProps {
+	name: string;
 	title: string;
 	color: string;
+	state: string[];
+	socket: any;
 }
 
 import { useState } from "react";
-import Card from "../Cards/page";
 
+import Card from "../Cards/cards";
 import style from "./columns.module.css";
-function Columns({ title, color }: ColumnsProps) {
-	const [cards, setCards] = useState<string[]>([]);
+
+function Columns({ name, title, color, state, socket }: ColumnsProps) {
 	const [isNew, setIsNew] = useState<boolean>(false);
 
 	function onSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
+		const value = e.currentTarget.card.value;
+		if (!value || !value.trim()) return;
+
 		setIsNew(false);
-		if (!e.currentTarget.card.value) return;
-		setCards([...cards, e.currentTarget.card.value]);
+		socket.emit("addMessage", {
+			message: value,
+			column: name,
+		});
 	}
 
 	function addCard() {
@@ -40,10 +48,10 @@ function Columns({ title, color }: ColumnsProps) {
 				</button>
 			</div>
 			{isNew && (
-				<Card onSubmit={onSubmit} setIsNew={setIsNew} card={cards} />
+				<Card onSubmit={onSubmit} setIsNew={setIsNew} card={state} />
 			)}
 			<ul className={style.ul}>
-				{cards.map((card, index) => (
+				{state.map((card, index) => (
 					<li key={index} className={style.card}>
 						{card}
 					</li>
