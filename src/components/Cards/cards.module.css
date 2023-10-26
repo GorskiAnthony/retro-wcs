@@ -1,5 +1,5 @@
 .card {
-	@apply bg-white shadow-md rounded-lg overflow-hidden self-center
+	@apply bg-white shadow-md rounded-b-lg overflow-hidden self-center
 	mb-3;
 }
 
