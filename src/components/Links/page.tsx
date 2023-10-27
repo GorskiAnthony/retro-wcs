@@ -8,6 +8,7 @@ function Links() {
 			<Image src="/logo.png" width={128} height={64} alt="logo" />
 			<ul>
 				<Link href="/">Accueil</Link>
+				<Link href="/retro">Go la retro</Link>
 				<Link href="/contact">Contact</Link>
 			</ul>
 		</nav>
