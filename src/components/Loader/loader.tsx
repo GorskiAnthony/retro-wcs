@@ -1,6 +1,4 @@
-import React from "react";
-
-import style from "./loader.module.css"; // Assurez-vous de créer le fichier CSS correspondant
+import style from "./loader.module.css";
 
 function Loader() {
 	return (
