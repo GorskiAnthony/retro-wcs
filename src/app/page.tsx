@@ -57,11 +57,14 @@ function Homepage() {
 						</p>
 					</div>
 					<div className="grid grid-cols-1 gap-6 rounded-xl bg-white p-8 md:p-10">
-						<img
+						<Image
 							src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a283_Circle%20Image-3.svg"
 							alt="Features Icon"
 							className="inline-block h-16"
+							width={1000}
+							height={1000}
 						/>
+
 						<p className="text-xl font-semibold">Speed</p>
 						<p className="text-sm text-[#636262]">
 							Lorem ipsum dolor sit amet consectetur adipiscing
