@@ -4,12 +4,7 @@ import style from "./links.module.css";
 function Links() {
 	return (
 		<nav className={style.navbar}>
-			<Image
-				src="/next.svg"
-				width={64}
-				height={64}
-				alt="Picture of the author"
-			/>
+			<Image src="/logo.png" width={128} height={64} alt="logo" />
 			<ul>
 				<li>Home</li>
 				<li>Contact</li>
