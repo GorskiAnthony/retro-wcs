@@ -24,7 +24,7 @@ export default function Home() {
 				socket.disconnect();
 			}
 		};
-	}, [socket]);
+	}, []);
 
 	async function socketInit() {
 		// Fetch for initializing the socket connection
