@@ -17,7 +17,7 @@ function Card({ onSubmit, setIsNew }: CardProps) {
 					className={style.buttonError}
 					onClick={() => setIsNew(false)}
 				>
-					En faite non..
+					En faite non.
 				</button>
 			</div>
 		</form>
