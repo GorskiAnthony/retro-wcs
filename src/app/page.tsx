@@ -1,103 +1,105 @@
-"use client";
+import Image from "next/image";
 
-import { useState, useEffect } from "react";
-import { io, Socket } from "socket.io-client";
-
-import Links from "@/components/Links/page";
-import Loader from "@/components/Loader/loader";
-import Columns from "@/components/Columns/columns";
-import style from "./homepage.module.css";
-
-export default function Home() {
-	const [socket, setSocket] = useState<Socket | null>(null);
-	const [isLoaded, setIsLoaded] = useState<boolean>(false);
-	const [allGood, setAllGood] = useState<string[]>([]);
-	const [badNews, setBadNews] = useState<string[]>([]);
-	const [fun, setFun] = useState<string[]>([]);
-
-	useEffect(() => {
-		if (!socket) {
-			socketInit();
-		}
-
-		return () => {
-			if (socket) {
-				socket.disconnect();
-			}
-		};
-	}, [socket]);
-
-	async function socketInit() {
-		// Fetch for initializing the socket connection
-		await fetch("/api/socket");
-
-		// Create a new Socket.io instance
-		const newSocket = io();
-
-		newSocket.on("connect", () => {
-			console.log("Connected to Socket.io");
-			setIsLoaded(true); // Set the 'isLoaded' state to true when connected
-		});
-
-		// Set up event listener for 'messageAdded'
-		newSocket.on("messageAdded", (data: any) => {
-			updateState(data.column, data.message);
-		});
-
-		setSocket(newSocket);
-	}
-
-	/**
-	 * @param name
-	 * @param value
-	 * @description updateState permet de mettre à jour le state en fonction de la colonne
-	 */
-	function updateState(name: string, value: string) {
-		switch (name) {
-			case "good":
-				setAllGood((prev) => [...prev, value]);
-				break;
-			case "bad":
-				setBadNews((prev) => [...prev, value]);
-				break;
-			case "fun":
-				setFun((prev) => [...prev, value]);
-				break;
-			default:
-				break;
-		}
-	}
-
-	return isLoaded ? (
-		<>
-			<Links />
-			<main className={style.main}>
-				<div className={style.columns}>
-					<Columns
-						name="good"
-						title="Ça c'est cool ! 🚀🤘"
-						color="#33b195"
-						state={allGood}
-						socket={socket}
-					/>
-					<Columns
-						name="bad"
-						title="À améliorer 📈"
-						color="#de5ab8"
-						state={badNews}
-						socket={socket}
-					/>
-					<Columns
-						name="fun"
-						title="Remarque & Fun 🤪"
-						color="#e3a908"
-						state={fun}
-						socket={socket}
-					/>
+function Homepage() {
+	return (
+		<section className="bg-[#f7f6f2]">
+			<div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
+				<div className="mx-auto max-w-3xl text-center">
+					<h2 className="mb-4 mt-6 text-3xl font-extrabold md:text-5xl">
+						Make every step user-centric
+					</h2>
+					<p className="mx-auto mb-8 mt-4 max-w-[528px] text-[#636262] md:mb-12 lg:mb-16">
+						Lorem ipsum dolor sit amet consectetur adipiscing elit
+						ut aliquam,purus sit amet luctus magna fringilla urna
+					</p>
 				</div>
-			</main>
-		</>
-	) : (
-		<Loader />
+				<div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
+					<div className="grid grid-cols-1 gap-6 rounded-xl bg-white p-8 md:p-10">
+						<Image
+							src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a287_Circle%20Image.svg"
+							alt="Features Icon"
+							className="inline-block h-16"
+							height={1000}
+							width={1000}
+						/>
+						<p className="text-xl font-semibold">Support</p>
+						<p className="text-sm text-[#636262]">
+							Lorem ipsum dolor sit amet consectetur adipiscing
+							elit ut aliquam, purus sit.
+						</p>
+					</div>
+					<div className="grid grid-cols-1 gap-6 rounded-xl bg-white p-8 md:p-10">
+						<Image
+							src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a285_Circle%20Image-1.svg"
+							alt="Features Icon"
+							className="inline-block h-16"
+							height={1000}
+							width={1000}
+						/>
+						<p className="text-xl font-semibold">Organise</p>
+						<p className="text-sm text-[#636262]">
+							Lorem ipsum dolor sit amet consectetur adipiscing
+							elit ut aliquam, purus sit.
+						</p>
+					</div>
+					<div className="grid grid-cols-1 gap-6 rounded-xl bg-white p-8 md:p-10">
+						<Image
+							src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a286_Circle%20Image-2.svg"
+							alt="Features Icon"
+							className="inline-block h-16"
+							width={1000}
+							height={1000}
+						/>
+						<p className="text-xl font-semibold">Flexibility</p>
+						<p className="text-sm text-[#636262]">
+							Lorem ipsum dolor sit amet consectetur adipiscing
+							elit ut aliquam, purus sit.
+						</p>
+					</div>
+					<div className="grid grid-cols-1 gap-6 rounded-xl bg-white p-8 md:p-10">
+						<img
+							src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a283_Circle%20Image-3.svg"
+							alt="Features Icon"
+							className="inline-block h-16"
+						/>
+						<p className="text-xl font-semibold">Speed</p>
+						<p className="text-sm text-[#636262]">
+							Lorem ipsum dolor sit amet consectetur adipiscing
+							elit ut aliquam, purus sit.
+						</p>
+					</div>
+					<div className="grid grid-cols-1 gap-6 rounded-xl bg-white p-8 md:p-10">
+						<Image
+							src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a286_Circle%20Image-2.svg"
+							alt="Features Icon"
+							className="inline-block h-16"
+							height={1000}
+							width={1000}
+						/>
+						<p className="text-xl font-semibold">Quality</p>
+						<p className="text-sm text-[#636262]">
+							Lorem ipsum dolor sit amet consectetur adipiscing
+							elit ut aliquam, purus sit.
+						</p>
+					</div>
+					<div className="grid grid-cols-1 gap-6 rounded-xl bg-white p-8 md:p-10">
+						<Image
+							src="https://uploads-ssl.webflow.com/646f65e37fe0275cfb808405/646f66cdeeb4ddfdae25a288_Circle%20Image-5.svg"
+							alt="Features Icon"
+							className="inline-block h-16"
+							height={1000}
+							width={1000}
+						/>
+						<p className="text-xl font-semibold">Resource</p>
+						<p className="text-sm text-[#636262]">
+							Lorem ipsum dolor sit amet consectetur adipiscing
+							elit ut aliquam, purus sit.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
 	);
 }
+
+export default Homepage;

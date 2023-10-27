@@ -6,5 +6,5 @@
 }
 
 .navbar ul {
-	@apply flex justify-around gap-5;
+	@apply flex justify-around items-center gap-5;
 }
