@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { io, Socket } from "socket.io-client";
 
-import Links from "@/components/Links/page";
 import Loader from "@/components/Loader/loader";
 import Columns from "@/components/Columns/columns";
 import style from "./homepage.module.css";
@@ -70,7 +69,6 @@ export default function Home() {
 
 	return isLoaded ? (
 		<>
-			<Links />
 			<main className={style.main}>
 				<div className={style.columns}>
 					<Columns
