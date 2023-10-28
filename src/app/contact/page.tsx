@@ -71,7 +71,7 @@ function Contact() {
 							href="#"
 							className="mr-5 flex w-full items-center justify-center bg-[#276ef1] px-8 py-4 font-semibold text-white transition [box-shadow:rgb(171,_196,245)-8px_8px] hover:[box-shadow:rgb(171,_196,_245)_0px_0px] md:mr-6 lg:mr-8"
 						>
-							<p className="mr-6 font-bold">Let's go 🚀</p>
+							<p className="mr-6 font-bold">Ok let's go 🎡</p>
 							<svg
 								fill="currentColor"
 								viewBox="0 0 20 21"
