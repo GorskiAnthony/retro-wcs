@@ -41,6 +41,7 @@ function Footer() {
 						{links.map((link) => (
 							<Link
 								href={link.url}
+								key={link.id}
 								className="inline-block px-6 py-2 font-normal text-black transition hover:text-[#d6a701]"
 							>
 								{link.name}
