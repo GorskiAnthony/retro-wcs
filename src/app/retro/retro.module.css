@@ -3,5 +3,5 @@
 }
 
 .columns {
-	@apply grid grid-cols-3 gap-4 p-4 w-3/4;
+	@apply grid md:grid-cols-3 gap-4 p-4 w-3/4;
 }
