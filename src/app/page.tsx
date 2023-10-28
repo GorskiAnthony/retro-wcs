@@ -6,11 +6,13 @@ function Homepage() {
 			<div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
 				<div className="mx-auto max-w-3xl text-center">
 					<h2 className="mb-4 mt-6 text-3xl font-extrabold md:text-5xl">
-						Make every step user-centric
+						l'application de rétrospective Scrum
 					</h2>
 					<p className="mx-auto mb-8 mt-4 max-w-[528px] text-[#636262] md:mb-12 lg:mb-16">
-						Lorem ipsum dolor sit amet consectetur adipiscing elit
-						ut aliquam,purus sit amet luctus magna fringilla urna
+						Notre application vous permet de mener des
+						rétrospectives Scrum en ligne. Vous pouvez créer des
+						rétrospectives, invités des participants, créer des
+						groupes et bien plus encore.
 					</p>
 				</div>
 				<div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
@@ -40,10 +42,9 @@ function Homepage() {
 						/>
 						<p className="text-xl font-semibold">Organisation</p>
 						<p className="text-sm text-[#636262]">
-							Notre équipe est toujours disponible pour répondre à
-							vos questions et vous assister à tout moment. Nous
-							sommes là pour vous soutenir dans toutes vos
-							rétrospectives Scrum.
+							Concernant notre l'organisation, nous avons
+							simplement créé un bouton pour vous simplifier la
+							prise en main de l'application.
 						</p>
 					</div>
 					<div className="grid grid-cols-1 gap-6 rounded-xl bg-white p-8 md:p-10">
