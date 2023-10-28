@@ -74,21 +74,21 @@ export default function Home() {
 					<Columns
 						name="good"
 						title="Ça c'est cool ! 🚀🤘"
-						color="#33b195"
+						color="#0de5a8"
 						state={allGood}
 						socket={socket}
 					/>
 					<Columns
 						name="bad"
 						title="À améliorer 📈"
-						color="#de5ab8"
+						color="#fd0a54"
 						state={badNews}
 						socket={socket}
 					/>
 					<Columns
 						name="fun"
 						title="Remarque & Fun 🤪"
-						color="#e3a908"
+						color="#c06c84"
 						state={fun}
 						socket={socket}
 					/>
