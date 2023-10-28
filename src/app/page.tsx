@@ -24,8 +24,10 @@ function Homepage() {
 						/>
 						<p className="text-xl font-semibold">Support</p>
 						<p className="text-sm text-[#636262]">
-							Lorem ipsum dolor sit amet consectetur adipiscing
-							elit ut aliquam, purus sit.
+							Notre équipe est toujours disponible pour répondre à
+							vos questions et vous assister à tout moment. Nous
+							sommes là pour vous soutenir dans toutes vos
+							rétrospectives Scrum.
 						</p>
 					</div>
 					<div className="grid grid-cols-1 gap-6 rounded-xl bg-white p-8 md:p-10">
@@ -36,10 +38,12 @@ function Homepage() {
 							height={1000}
 							width={1000}
 						/>
-						<p className="text-xl font-semibold">Organise</p>
+						<p className="text-xl font-semibold">Organisation</p>
 						<p className="text-sm text-[#636262]">
-							Lorem ipsum dolor sit amet consectetur adipiscing
-							elit ut aliquam, purus sit.
+							Notre équipe est toujours disponible pour répondre à
+							vos questions et vous assister à tout moment. Nous
+							sommes là pour vous soutenir dans toutes vos
+							rétrospectives Scrum.
 						</p>
 					</div>
 					<div className="grid grid-cols-1 gap-6 rounded-xl bg-white p-8 md:p-10">
@@ -50,10 +54,13 @@ function Homepage() {
 							width={1000}
 							height={1000}
 						/>
-						<p className="text-xl font-semibold">Flexibility</p>
+						<p className="text-xl font-semibold">Flexibilité</p>
 						<p className="text-sm text-[#636262]">
-							Lorem ipsum dolor sit amet consectetur adipiscing
-							elit ut aliquam, purus sit.
+							Vous n'avez pas besoin de vous soucier de la gestion
+							de vos données. Notre plateforme est totalement
+							flexible, vous permettant de vous concentrer sur vos
+							rétrospectives sans vous soucier de la gestion des
+							fichiers ou des paramètres compliqués.
 						</p>
 					</div>
 					<div className="grid grid-cols-1 gap-6 rounded-xl bg-white p-8 md:p-10">
@@ -65,10 +72,12 @@ function Homepage() {
 							height={1000}
 						/>
 
-						<p className="text-xl font-semibold">Speed</p>
+						<p className="text-xl font-semibold">Réactivité</p>
 						<p className="text-sm text-[#636262]">
-							Lorem ipsum dolor sit amet consectetur adipiscing
-							elit ut aliquam, purus sit.
+							Notre site est incroyablement réactif, vous offrant
+							une expérience utilisateur fluide et rapide. Vous
+							pouvez travailler sans délai pour maximiser votre
+							productivité pendant vos rétrospectives.
 						</p>
 					</div>
 					<div className="grid grid-cols-1 gap-6 rounded-xl bg-white p-8 md:p-10">
@@ -79,10 +88,13 @@ function Homepage() {
 							height={1000}
 							width={1000}
 						/>
-						<p className="text-xl font-semibold">Quality</p>
+						<p className="text-xl font-semibold">Qualité</p>
 						<p className="text-sm text-[#636262]">
-							Lorem ipsum dolor sit amet consectetur adipiscing
-							elit ut aliquam, purus sit.
+							Nous prenons la sécurité de vos données au sérieux.
+							Notre code est sécurisé, garantissant la
+							confidentialité et l'intégrité de vos informations
+							tout au long de votre expérience de rétrospective
+							Scrum.
 						</p>
 					</div>
 					<div className="grid grid-cols-1 gap-6 rounded-xl bg-white p-8 md:p-10">
@@ -93,10 +105,12 @@ function Homepage() {
 							height={1000}
 							width={1000}
 						/>
-						<p className="text-xl font-semibold">Resource</p>
+						<p className="text-xl font-semibold">Ressources</p>
 						<p className="text-sm text-[#636262]">
-							Lorem ipsum dolor sit amet consectetur adipiscing
-							elit ut aliquam, purus sit.
+							Pour explorer davantage ou contribuer à notre
+							projet, vous pouvez trouver notre code source sur
+							GitHub. Découvrez nos ressources et participez à
+							l'amélioration de notre plateforme.
 						</p>
 					</div>
 				</div>
