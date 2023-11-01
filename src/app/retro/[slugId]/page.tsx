@@ -5,7 +5,7 @@ import { io, Socket } from "socket.io-client";
 
 import Loader from "@/components/Loader/loader";
 import Columns from "@/components/Columns/columns";
-import style from "./retro.module.css";
+import style from "./session.module.css";
 
 export default function Home({ params }: { params: { slugId: string } }) {
 	const [socket, setSocket] = useState<Socket | null>(null);
@@ -34,7 +34,6 @@ export default function Home({ params }: { params: { slugId: string } }) {
 		const newSocket = io();
 
 		newSocket.on("connect", () => {
-			console.log("Connected to Socket.io with slug: " + slug);
 			newSocket.emit("joinRoom", slug); // Join the room
 			setIsLoaded(true); // Set the 'isLoaded' state to true when connected
 		});

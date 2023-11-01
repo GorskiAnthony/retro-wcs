@@ -36,7 +36,7 @@ function Columns({ name, title, color, state, socket, room }: ColumnsProps) {
 	}
 
 	return (
-		<div>
+		<div className={style.container}>
 			<div className={style.column}>
 				<h2 style={{ backgroundColor: color }} className={style.h2}>
 					{title}
