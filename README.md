@@ -1,6 +1,6 @@
 <h1 align="center">Bienvenue sur retro-wcs 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.1-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-1.1.0-blue.svg?cacheSeconds=2592000" />
   <img src="https://img.shields.io/badge/node-%3E%3D18.18.0-blue.svg" />
   <a href="https://github.com/GorskiAnthony/retro-wcs#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
@@ -74,6 +74,9 @@ Donnez un ⭐️ si ce projet vous a aidé !
     -   https://retro-wcs.onrender.com/
 -   **v1.0.1** - 2023-10-27
     -   Ajout d'un logo
+-   **v1.1.0** - 2023-11-01
+    -   Ajout d'une route pour les retro
+    -   Ajout d'un bouton qui génére un lien pour rejoindre la retro
 
 ---
 

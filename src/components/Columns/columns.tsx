@@ -5,6 +5,7 @@ interface ColumnsProps {
 	title: string;
 	color: string;
 	state: string[];
+	room: string;
 	socket: any;
 }
 
@@ -13,7 +14,7 @@ import { useState } from "react";
 import Card from "../Cards/cards";
 import style from "./columns.module.css";
 
-function Columns({ name, title, color, state, socket }: ColumnsProps) {
+function Columns({ name, title, color, state, socket, room }: ColumnsProps) {
 	const [isNew, setIsNew] = useState<boolean>(false);
 
 	function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -24,6 +25,7 @@ function Columns({ name, title, color, state, socket }: ColumnsProps) {
 		socket.emit("addMessage", {
 			message: value,
 			column: name,
+			room: room,
 		});
 		e.currentTarget.reset();
 		setIsNew(false);
@@ -34,7 +36,7 @@ function Columns({ name, title, color, state, socket }: ColumnsProps) {
 	}
 
 	return (
-		<div>
+		<div className={style.container}>
 			<div className={style.column}>
 				<h2 style={{ backgroundColor: color }} className={style.h2}>
 					{title}

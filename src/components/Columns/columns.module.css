@@ -1,3 +1,7 @@
+.container {
+	@apply flex flex-col pb-5;
+}
+
 .column {
 	@apply rounded-t-md flex flex-col bg-gray-200;
 }
