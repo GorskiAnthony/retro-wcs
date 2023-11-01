@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 import style from "./footer.module.css";
 
@@ -26,17 +25,6 @@ function Footer() {
 		<footer className={style.footer}>
 			<div className="py-16 mx-auto w-full max-w-7xl px-5 md:px-10">
 				<div className="flex-col flex items-center">
-					<a
-						href="#"
-						className="mb-8 inline-block max-w-full text-black"
-					>
-						<Image
-							src="/logo.png"
-							width={128}
-							height={64}
-							alt="logo"
-						/>
-					</a>
 					<div className="text-center font-semibold max-[991px]: max-[991px]:py-1">
 						{links.map((link) => (
 							<Link

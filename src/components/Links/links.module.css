@@ -1,5 +1,4 @@
 .navbar {
-	background-color: var(--background-start-rgb);
 	color: var(--foreground-rgb);
 
 	@apply flex justify-around py-5;

@@ -1,5 +1,5 @@
 .container {
-	@apply flex flex-col pb-5;
+	@apply flex-col pb-5;
 }
 
 .column {
@@ -16,12 +16,12 @@
 
 .button {
 	@apply rounded-md m-2 p-2 border-dashed border-2 border-gray-500 self-center hover:bg-gray-300 hover:text-white hover:border-white;
-	background-color: var(--background-end-rgb);
+	background-color: var(--foreground-rgb);
 }
 
 .card {
 	@apply flex flex-col justify-between rounded-md m-2 p-2 border-2;
-	background-color: var(--background-end-rgb);
+	background-color: var(--foreground-rgb);
 }
 
 .ul {
@@ -30,5 +30,5 @@
 
 .ul li {
 	@apply flex justify-between p-2;
-	color: var(--foreground-rgb);
+	color: var(--background-end-rgb);
 }
