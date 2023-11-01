@@ -1,7 +1,3 @@
-.main {
-	@apply flex flex-col items-center justify-center;
-}
-
-.columns {
-	@apply grid md:grid-cols-3 gap-4 p-4 w-3/4;
+.works {
+	background-image: url("../assets/rectangle.svg");
 }
