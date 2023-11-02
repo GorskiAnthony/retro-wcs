@@ -1,5 +1,8 @@
+"use client";
+
 import { useState } from "react";
 import style from "./cards.module.css";
+import { sanitize } from "@/utils/sanitize";
 
 interface CardProps {
 	onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
@@ -14,32 +17,61 @@ function Card({ onSubmit, setIsNew }: CardProps) {
 	);
 	const [textAreaValue, setTextAreaValue] = useState<string>("");
 
+	/**
+	 *
+	 * @param text est le texte à rechercher
+	 * @returns void
+	 * @description getGifs permet de récupérer les GIFs
+	 */
 	const getGifs = async (text: string) => {
-		const res = await fetch(
-			`https://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${text}&limit=6&offset=0&rating=g&lang=fr`
-		);
-		const data = await res.json();
-		const gifUrls = data.data.map(
-			(gifData: any) => gifData.images.downsized.url
-		);
-		const previewUrls = data.data.map(
-			(gifData: any) => gifData.images.preview_gif.url
-		);
-		setGifs(gifUrls);
-		setPreviews(previewUrls);
+		const sanitizedText = sanitize(text);
+		try {
+			const response = await fetch(
+				`https://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${sanitizedText}&limit=6&offset=0&rating=g&lang=fr`
+			);
+
+			if (!response.ok) {
+				// Si la réponse n'est pas "ok" (statut HTTP différent de 200), générer une erreur
+				throw new Error(
+					`Erreur lors de la requête API Giphy. Statut : ${response.status}`
+				);
+			}
+
+			const data = await response.json();
+			const gifUrls = data.data.map(
+				(gifData: any) => gifData.images.downsized.url
+			);
+			const previewUrls = data.data.map(
+				(gifData: any) => gifData.images.preview_gif.url
+			);
+			setGifs(gifUrls);
+			setPreviews(previewUrls);
+		} catch (error) {
+			// Afficher un message d'erreur.
+			console.error(error);
+		}
 	};
 
+	/**
+	 *
+	 * @param e est un événement de type React.KeyboardEvent<HTMLTextAreaElement>
+	 * @returns void
+	 * @description handleKeyDown permet de récupérer les GIFs si l'utilisateur appuie sur "Entrée" & commence par "/"
+	 */
 	const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-		// get gifs only if input starts with /
 		if (e.key === "Enter" && e.currentTarget.value.startsWith("/")) {
-			// L'utilisateur a appuyé sur "Entrée" tout en commençant par "/"
 			getGifs(e.currentTarget.value);
 		}
 	};
 
+	/**
+	 *
+	 * @param index est l'index du GIF sélectionné
+	 * @returns void
+	 * @description handleGifSelect permet de sélectionner un GIF et de l'ajouter dans le textarea de la carte
+	 */
 	const handleGifSelect = (index: number) => {
 		setSelectedGifIndex(index);
-		// Remplir automatiquement le texte du textarea avec l'URL du GIF sélectionné
 		setTextAreaValue(`![gif](${gifs[index]})`);
 	};
 
@@ -50,7 +82,9 @@ function Card({ onSubmit, setIsNew }: CardProps) {
 				id="card"
 				onKeyDown={handleKeyDown}
 				value={textAreaValue}
-				onChange={(e) => setTextAreaValue(e.target.value)}
+				onChange={(e) =>
+					setTextAreaValue(sanitize(e.currentTarget.value))
+				}
 			></textarea>
 
 			{/* Ajoute d'un espace pour la prévisualisation des GIFs */}
