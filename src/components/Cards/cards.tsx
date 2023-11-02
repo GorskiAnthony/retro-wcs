@@ -53,7 +53,7 @@ function Card({ onSubmit, setIsNew }: CardProps) {
 				onChange={(e) => setTextAreaValue(e.target.value)}
 			></textarea>
 
-			{/* Ajouter un espace pour la prévisualisation des GIFs */}
+			{/* Ajoute d'un espace pour la prévisualisation des GIFs */}
 			<div className={style.preview}>
 				{previews.map((preview, index) => (
 					<img
