@@ -3,13 +3,17 @@
 import { useState, useEffect } from "react";
 import { io, Socket } from "socket.io-client";
 
+import { sanitize } from "@/utils/sanitize";
 import Loader from "@/components/Loader/loader";
 import Columns from "@/components/Columns/columns";
+
 import style from "./session.module.css";
 
 export default function Home({ params }: { params: { slugId: string } }) {
 	const [socket, setSocket] = useState<Socket | null>(null);
 	const [isLoaded, setIsLoaded] = useState<boolean>(false);
+
+	// State pour les colonnes
 	const [allGood, setAllGood] = useState<string[]>([]);
 	const [badNews, setBadNews] = useState<string[]>([]);
 	const [fun, setFun] = useState<string[]>([]);
@@ -26,24 +30,38 @@ export default function Home({ params }: { params: { slugId: string } }) {
 		};
 	}, []);
 
+	/**
+	 *
+	 * @param slug est le slug de la session
+	 * @description socketInit permet d'initialiser le socket
+	 * et de rejoindre la room
+	 */
 	async function socketInit(slug: string) {
-		// Fetch for initializing the socket connection
-		await fetch("/api/socket");
+		try {
+			// Je récupère le socket
+			await fetch("/api/socket");
 
-		// Create a new Socket.io instance
-		const newSocket = io();
+			// Création d'un nouveau socket
+			const newSocket = io();
 
-		newSocket.on("connect", () => {
-			newSocket.emit("joinRoom", slug); // Join the room
-			setIsLoaded(true); // Set the 'isLoaded' state to true when connected
-		});
+			newSocket.on("connect", () => {
+				newSocket.emit("joinRoom", slug); // Join une room
+				setIsLoaded(true);
+			});
 
-		// Set up event listener for 'messageAdded'
-		newSocket.on("messageAdded", (data: any) => {
-			updateState(data.column, data.message);
-		});
+			// Mise en place d'un récepteur d'événements pour "messageAdded".
+			newSocket.on("messageAdded", (data: any) => {
+				updateState(data.column, data.message);
+			});
 
-		setSocket(newSocket);
+			setSocket(newSocket);
+		} catch (error) {
+			// Gérer les erreurs ici, par exemple, enregistrer l'erreur dans une variable d'état ou afficher un message d'erreur à l'utilisateur.
+			console.error(
+				"Une erreur s'est produite lors de l'initialisation du socket : ",
+				error
+			);
+		}
 	}
 
 	/**
@@ -54,13 +72,13 @@ export default function Home({ params }: { params: { slugId: string } }) {
 	function updateState(name: string, value: string) {
 		switch (name) {
 			case "good":
-				setAllGood((prev) => [...prev, value]);
+				setAllGood((prev) => [...prev, sanitize(value)]);
 				break;
 			case "bad":
-				setBadNews((prev) => [...prev, value]);
+				setBadNews((prev) => [...prev, sanitize(value)]);
 				break;
 			case "fun":
-				setFun((prev) => [...prev, value]);
+				setFun((prev) => [...prev, sanitize(value)]);
 				break;
 			default:
 				break;

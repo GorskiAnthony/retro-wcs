@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import style from "./links.module.css";
 import Link from "next/link";
+
+import { navLinks } from "@/utils/links";
+import style from "./links.module.css";
 
 function Links() {
 	const [isOpen, setIsOpen] = useState<boolean>(false); // State for the mobile menu
@@ -11,24 +13,6 @@ function Links() {
 	const toggleMenu = () => {
 		setIsOpen(!isOpen);
 	};
-
-	const links = [
-		{
-			id: 1,
-			name: "Accueil",
-			url: "/",
-		},
-		{
-			id: 2,
-			name: "Retrospective",
-			url: "/retro",
-		},
-		{
-			id: 3,
-			name: "Une idée ?",
-			url: "/contact",
-		},
-	];
 
 	return (
 		<>
@@ -68,7 +52,7 @@ function Links() {
 			>
 				<div className="mx-5">
 					<ul className="font-medium flex flex-col p-4 md:px-5 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white">
-						{links.map((link) => (
+						{navLinks.map((link) => (
 							<li key={link.id} className="py-2">
 								<Link
 									href={link.url}
