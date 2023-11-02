@@ -89,11 +89,11 @@ function Retro() {
 							<p className="text-xl font-bold">3</p>
 						</div>
 						<p className="mb-2 text-xl font-semibold">
-							Et c'est bon!
+							Et c'est bon !
 						</p>
 						<p className="text-sm text-[#636262]">
 							Vous pouvez maintenant commencer à faire votre
-							retrospective.
+							rétrospective.
 						</p>
 					</div>
 				</div>
