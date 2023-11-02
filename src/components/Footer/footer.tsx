@@ -1,32 +1,14 @@
 import Link from "next/link";
-
 import style from "./footer.module.css";
+import { footerLinks } from "@/utils/links";
 
 function Footer() {
-	const links = [
-		{
-			id: 1,
-			name: "À propos",
-			url: "#",
-		},
-		{
-			id: 2,
-			name: "Idée",
-			url: "/contact",
-		},
-		{
-			id: 3,
-			name: "Support",
-			url: "#",
-		},
-	];
-
 	return (
 		<footer className={style.footer}>
 			<div className="py-16 mx-auto w-full max-w-7xl px-5 md:px-10">
 				<div className="flex-col flex items-center">
 					<div className="text-center font-semibold max-[991px]: max-[991px]:py-1">
-						{links.map((link) => (
+						{footerLinks.map((link) => (
 							<Link
 								href={link.url}
 								key={link.id}

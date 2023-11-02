@@ -1,27 +1,17 @@
 "use client";
 
-import { useState, Dispatch, SetStateAction, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { generateRandomSession } from "@/utils/helpers";
+
 import lineDown from "../assets/lineDown.svg";
 import lineUp from "../assets/lineUp.svg";
 import style from "./retro.module.css";
 
-const generateRandomSession = (setter: Dispatch<SetStateAction<string>>) => {
-	const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
-	let result = "";
-	const length = 5;
-
-	for (let i = 0; i < length; i++) {
-		const randomIndex = Math.floor(Math.random() * characters.length);
-		result += characters.charAt(randomIndex);
-	}
-
-	setter(result);
-};
-
 function Retro() {
-	const [session, setSession] = useState("");
+	const [session, setSession] = useState<string>("");
 
+	// Générer une session aléatoire dès le chargement de la page
 	useEffect(() => {
 		generateRandomSession(setSession);
 	}, []);
