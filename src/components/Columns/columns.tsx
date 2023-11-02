@@ -11,6 +11,7 @@ interface ColumnsProps {
 
 import { useState } from "react";
 
+import ReactMarkdown from "react-markdown";
 import Card from "../Cards/cards";
 import style from "./columns.module.css";
 
@@ -54,7 +55,7 @@ function Columns({ name, title, color, state, socket, room }: ColumnsProps) {
 			<ul className={style.ul}>
 				{state.map((card, index) => (
 					<li key={index} className={style.card}>
-						{card}
+						<ReactMarkdown>{card}</ReactMarkdown>
 					</li>
 				))}
 			</ul>
