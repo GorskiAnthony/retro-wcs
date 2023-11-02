@@ -1,6 +1,7 @@
 .card {
 	@apply bg-white shadow-md rounded-b-lg overflow-hidden self-center
 	mb-3;
+	color: var(--background-end-rgb);
 }
 
 .card textarea {
