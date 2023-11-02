@@ -16,7 +16,7 @@ function Card({ onSubmit, setIsNew }: CardProps) {
 
 	const getGifs = async (text: string) => {
 		const res = await fetch(
-			`https://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${text}&limit=5&offset=0&rating=g&lang=fr`
+			`https://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${text}&limit=6&offset=0&rating=g&lang=fr`
 		);
 		const data = await res.json();
 		const gifUrls = data.data.map(
@@ -27,7 +27,6 @@ function Card({ onSubmit, setIsNew }: CardProps) {
 		);
 		setGifs(gifUrls);
 		setPreviews(previewUrls);
-		console.log(data);
 	};
 
 	const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
