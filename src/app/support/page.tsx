@@ -49,7 +49,10 @@ function Support() {
 				</div>
 				<div className="mb-8 md:mb-12 lg:mb-16">
 					{questions.map((question) => (
-						<div className="mb-6 rounded-sm border-b-[1px] border-[#c4c4c4] p-8">
+						<div
+							key={question.id}
+							className="mb-6 rounded-sm border-b-[1px] border-[#c4c4c4] p-8"
+						>
 							<div className="flex cursor-pointer items-start justify-between">
 								<p className="text-xl font-semibold">
 									{question.question}

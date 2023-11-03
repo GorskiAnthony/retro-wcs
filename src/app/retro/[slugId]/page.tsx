@@ -28,7 +28,7 @@ export default function Home({ params }: { params: { slugId: string } }) {
 				socket.disconnect();
 			}
 		};
-	}, []);
+	}, [params.slugId, socket, socketInit]);
 
 	/**
 	 *
