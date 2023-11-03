@@ -30,17 +30,15 @@ function Columns({ name, title, color, state, socket, room }: ColumnsProps) {
 		const value = sanitize(e.currentTarget.card.value);
 		if (!value || !value.trim()) return;
 
-		socket.emit("addMessage", {
+		const message = {
 			message: value,
 			column: name,
 			room: room,
-		});
+		};
+
+		socket.emit("addMessage", message);
 		e.currentTarget.reset();
 		setIsNew(false);
-	}
-
-	function addCard() {
-		setIsNew(true);
 	}
 
 	return (
@@ -53,7 +51,7 @@ function Columns({ name, title, color, state, socket, room }: ColumnsProps) {
 				<button
 					style={{ color: color }}
 					className={`${style.button}`}
-					onClick={addCard}
+					onClick={() => setIsNew(true)}
 				>
 					+ Add New Card
 				</button>
