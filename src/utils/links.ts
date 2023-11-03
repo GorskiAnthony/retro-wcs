@@ -30,7 +30,7 @@ const footerLinks = [
 	{
 		id: 3,
 		name: "Support",
-		url: "#",
+		url: "/support",
 	},
 ];
 
